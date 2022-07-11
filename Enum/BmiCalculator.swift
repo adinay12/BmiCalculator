@@ -21,11 +21,11 @@ enum BmiCalculator {
     var title: String {
         switch self {
         case .plus:
-            return "Привет"
+            return "Ниже среднего"
         case .minus:
-            return "Как дела"
+            return "Средний"
         case .times:
-            return "Пасмурно"
+            return "Выше среднего"
         case .division:
             return "Солнечно"
         case .answer:
@@ -36,19 +36,18 @@ enum BmiCalculator {
             return "Море"
         case .percent:
             return "Отдых"
-        default:
-            print("Нечего")
+       
         }
     }
     
     var SubTitle: String {
         switch self {
         case .plus:
-            return "Прибовляет"
+            return "Надо похудеть"
         case .minus:
-            return "Вычисляет"
+            return "Надо сбросить вес,до лета"
         case .times:
-            return "Умножает"
+            return "Вам надо больше двигаться"
         case .division:
             return "Делит"
         case .answer:
@@ -59,8 +58,10 @@ enum BmiCalculator {
             return "Точка"
         case .percent:
             return " вычисление процентов"
-        default:
-            print("Делать")
+       
         }
     }
 }
+
+
+

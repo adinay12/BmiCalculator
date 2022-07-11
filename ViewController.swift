@@ -15,8 +15,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var weghtLabel: UILabel!
     @IBOutlet weak var growthLabel: UILabel!
 
-
-    var weightModel: BmiCalculator?
+    
+   
+    var weightModel: BmiCalculator = .minus
     
     var weight: Int = 50
     var growth: Int = 150

@@ -23,55 +23,49 @@ class ResultViewController: UIViewController {
     var weigth = 100
     var growth = 99
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Результаты"
         
+        weigthLabel.text = "\(weigth) кг"
+        growthLabel.text = "\(growth) см"
         
-        weigthLabel.text = "\(weigth) см"
-        growthLabel.text = "\(growth) кг"
-
-        
-     initialSetUp()
         funcdBMI()
         
-        }
+        initialSetUp()
+        
+        
+    }
     
     func funcdBMI(){
-           let result = Float(weigth) / pow(Float(growth)/100, 2)
-       
-        if result < 16 {
+        let result = Float(weigth) / pow(Float(growth)/100, 2)
+        switch result {
+        case 16:
             weightType = .plus
-        }
-        if result > 16 && result < 22.22 {
+        case 16..<22.22 :
             weightType = .minus
-        }
-        if result > 22.22 && result < 27 {
+        case 22.22..<27:
             weightType = .times
-        }
-        if result > 28 && result < 35 {
+        case 27...35:
             weightType = .answer
-        }
-        if result > 35 && result < 44 {
+        case 35...44:
             weightType = .digit
-        }
-        if result > 44 && result < 54 {
+        case 44...54:
             weightType = .point
-        }
-        if result > 54 && result < 65 {
+        case 54...65:
             weightType = .division
-        }
-        if result > 65  {
+        case 65:
             weightType = .percent
+        default:
+            print("plus")
         }
+        
         
     }
     
     func  initialSetUp() {
         if let height = weightType {
-            TitleLabel.text = title
+            TitleLabel.text = height.title
             discriptionLabel.text = height.SubTitle
         }
     }
